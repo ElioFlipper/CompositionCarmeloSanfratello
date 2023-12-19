@@ -10,6 +10,7 @@ import { ToDo } from "./ToDo";
 import { ToDo2 } from "./ToDoProva";
 import { Welcome } from "./Welcome";
 import { LanguageContext } from "./assets/LanguageContext";
+import { FetchData } from "./GitHubUser";
 
 export function App() {
 
@@ -19,18 +20,8 @@ export function App() {
   }
 
   return (
-    <Container title={<h1>La mia nuova app</h1>}>
-      <Welcome name="Elio" eta={28} />
-      <LanguageContext.Provider value={language}>
-        <select name="Language" id="Language" onClick={()=>handleLanguage('it')}>Seleziona lingua
-          <option value="it">Italiano</option>
-          <option value="en" onClick={()=>handleLanguage('en')}>English</option>
-        </select>
-        <AlertClock />
-      </LanguageContext.Provider>
-      <br />
-      <ToDo2 />
 
-    </Container>
+    <FetchData username="elioflipper" />
+
   )
 } 
