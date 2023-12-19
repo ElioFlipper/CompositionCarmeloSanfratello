@@ -11,6 +11,7 @@ import { ToDo2 } from "./ToDoProva";
 import { Welcome } from "./Welcome";
 import { LanguageContext } from "./assets/LanguageContext";
 import { FetchData } from "./GitHubUser";
+import { GetUsers } from "./GitHubUsers";
 
 export function App() {
 
@@ -20,8 +21,9 @@ export function App() {
   }
 
   return (
-
-    <FetchData username="elioflipper" />
+    <div>
+    <GetUsers />
+    </div>
 
   )
 } 
