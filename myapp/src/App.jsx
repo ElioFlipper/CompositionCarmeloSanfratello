@@ -12,6 +12,7 @@ import { Welcome } from "./Welcome";
 import { LanguageContext } from "./assets/LanguageContext";
 import { FetchData } from "./GitHubUser";
 import { GetUsers } from "./GitHubUsers";
+import { HookCounter } from "./useCounter";
 
 export function App() {
 
@@ -22,7 +23,7 @@ export function App() {
 
   return (
     <div>
-    <GetUsers />
+      <HookCounter />
     </div>
 
   )
