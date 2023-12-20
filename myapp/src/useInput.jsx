@@ -18,6 +18,10 @@ function useInput() {
     function handleSubmitButton(event) {
         event.preventDefault()
         console.log(input)
+        setInput({
+            username:"",
+            password:""
+        })
     }
 
     return {
