@@ -10,16 +10,16 @@ import { ToDo } from "./ToDo";
 import { ToDo2 } from "./ToDoProva";
 import { Welcome } from "./Welcome";
 import { LanguageContext } from "./assets/LanguageContext";
-import { FetchData } from "./GitHubUser";
 import { GetUsers } from "./GitHubUsers";
 import { HookCounter } from "./useCounter";
 import { InputFunction } from "./useInput";
+import { GithubUser } from "./GitHubUser";
 
 export function App() {
 
   return (
     <div>
-<FetchData username="elioflipper"/>
+      <GithubUser username="elioflipper" />
     </div>
 
   )
