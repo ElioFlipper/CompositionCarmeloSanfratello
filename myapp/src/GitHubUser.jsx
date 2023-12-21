@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function useFetchData(username){
+function useGithubUser(username){
     const [data, setData] = useState(null)
 
     async function getData(username) {
@@ -17,7 +17,7 @@ function useFetchData(username){
     return {data}
 }
 
-export function FetchData({ username }) {
+export function useGithubUser({ username }) {
     
     const {data} = useFetchData(username)
 
