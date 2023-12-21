@@ -14,12 +14,13 @@ import { GetUsers } from "./GitHubUsers";
 import { HookCounter } from "./useCounter";
 import { InputFunction } from "./useInput";
 import { GithubUser } from "./GitHubUser";
+import { Location } from "./useCurrentLocation";
 
 export function App() {
 
   return (
     <div>
-      <GithubUser username="elioflipper" />
+      <Location />
     </div>
 
   )

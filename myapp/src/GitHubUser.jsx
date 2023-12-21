@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function useGithubUser(username){
+function useGithubUser(username) {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -13,7 +13,7 @@ function useGithubUser(username){
             const json = await response.json()
             console.log(json)
             setData(json)
-            
+
         } catch (error) {
             setError(error)
             setData(null)
@@ -27,12 +27,12 @@ function useGithubUser(username){
         getData(username)
     }, [username])
 
-    return {data}
+    return { data }
 }
 
 export function GithubUser({ username }) {
-    
-    const {data} = useGithubUser(username)
+
+    const { data } = useGithubUser(username)
 
     return (
         <div>
