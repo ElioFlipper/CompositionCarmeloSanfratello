@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react"
 
-export function FetchData({ username }) {
-
+function useFetchData(username){
     const [data, setData] = useState(null)
 
     async function getData(username) {
         const response = await fetch(`https://api.github.com/users/${username}`)
-        const data = await response.json()
-        console.log(data)
-        setData(data)
+        const json = await response.json()
+        console.log(json)
+        setData(json)
     }
 
     useEffect(() => {
         getData(username)
     }, [username])
+
+    return {data}
+}
+
+export function FetchData({ username }) {
+    
+    const {data} = useFetchData(username)
 
     return (
         <div>

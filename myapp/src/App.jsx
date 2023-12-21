@@ -17,14 +17,9 @@ import { InputFunction } from "./useInput";
 
 export function App() {
 
-  const [language, setLanguage] = useState('en')
-  function handleLanguage(language) {
-    setLanguage(language)
-  }
-
   return (
     <div>
-<InputFunction />
+<FetchData username="elioflipper"/>
     </div>
 
   )
