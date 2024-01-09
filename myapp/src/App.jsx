@@ -11,15 +11,17 @@ import { ToDo2 } from "./ToDoProva";
 import { Welcome } from "./Welcome";
 import { LanguageContext } from "./assets/LanguageContext";
 import { FetchData } from "./GitHubUser";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 export function App() {
 
   return (
     <Routes>
-      <Route path="/" element= {<Welcome name="Elio" eta={28} />}/>
-      <Route path="/githubUser" element= {<FetchData username="elioflipper"  />}/>
-      <Route path="/counter" element= {<Counter initialValue={0} variable={802}  />}/>
+      <Route path="/" element={<Welcome name="Elio" eta={28} />} />
+      <Route path="/githubUser" element={<FetchData username="elioflipper" />} />
+      <Route path="/counter" element={<Counter initialValue={0} variable={802} />} />
+      <Route path="*" element={<div><p>Not found</p>
+      <Link to="/" >Go home</Link></div>} />
     </Routes>
 
   )
