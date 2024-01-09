@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom"
 import { CounterDisplay } from "./CounterDisplay"
 import { useEffect, useRef, useState } from "react"
 
 export function Counter({ initialValue, variable }) {
 
     const [counter, setCounter] = useState(initialValue)
+    const navigate = useNavigate()
 
     const upDown = useRef("none")
 
@@ -33,11 +35,16 @@ export function Counter({ initialValue, variable }) {
         setCounter(initialValue)
     }
 
+    function handleWelcomePage(){
+        navigate("/")
+    }
+
     return (
         <div>
             <CounterDisplay initialValue={counter} setValue={setCounter} variable={variable} />
             <button onClick={HandleCounterDecrement}>Decrement</button>
             <button onClick={HandleCounterReset}>Reset</button>
+            <button onClick={handleWelcomePage}>Click here to return to the welcome page</button>
         </div>
     )
 }

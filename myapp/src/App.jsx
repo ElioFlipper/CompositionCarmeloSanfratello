@@ -17,7 +17,9 @@ export function App() {
 
   return (
     <Routes>
-      <Route path="users/:username" element= {<FetchData username="elioflipper" />}/>
+      <Route path="/" element= {<Welcome name="Elio" eta={28} />}/>
+      <Route path="/githubUser" element= {<FetchData username="elioflipper"  />}/>
+      <Route path="/counter" element= {<Counter initialValue={0} variable={802}  />}/>
     </Routes>
 
   )
