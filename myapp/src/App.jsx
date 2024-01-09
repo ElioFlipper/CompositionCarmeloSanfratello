@@ -11,17 +11,14 @@ import { ToDo2 } from "./ToDoProva";
 import { Welcome } from "./Welcome";
 import { LanguageContext } from "./assets/LanguageContext";
 import { FetchData } from "./GitHubUser";
+import { Route, Routes } from "react-router-dom";
 
 export function App() {
 
-  const [language, setLanguage] = useState('en')
-  function handleLanguage(language) {
-    setLanguage(language)
-  }
-
   return (
-
-    <FetchData username="elioflipper" />
+    <Routes>
+      <Route path="users/:username" element= {<FetchData username="elioflipper" />}/>
+    </Routes>
 
   )
 } 
