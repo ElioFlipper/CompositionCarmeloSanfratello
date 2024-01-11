@@ -21,6 +21,7 @@ export function App() {
   return (
     <Routes>
       <Route path="users" element={<GithubuserList />}>
+        <Route index element={<p>Add a user and select it</p>}></Route>
         <Route path=":username" element={ <ShowGithubUser />}></Route>
       </Route>
     </Routes>)
