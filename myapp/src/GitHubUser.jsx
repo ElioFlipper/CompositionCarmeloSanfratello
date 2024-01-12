@@ -1,32 +1,22 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import useSWR from "swr"
 
-export function FetchData({ username }) {
+const fetcher = url => fetch(url).then(response => response.json())
 
-    const [data, setData] = useState(null)
-    const navigate = useNavigate()
-    
-    useEffect(() => {
-        async function getData() {
-            const response = await fetch(`https://api.github.com/users/${username}`)
-            const data = await response.json()
-            console.log(data)
-            setData(data)
-        }
-        getData()
-    }, [username])
+export function FetchData() {
 
-        function handleShowCounterButton(){
-            navigate("/counter")
-        }
-
+    const { data, error } = useSWR("http://api.github.com/users", fetcher)
 
     return (
         <div>
-            {data && <h1>{data.name}</h1>}
-            {data && <h2>{data.login}</h2>}
-            {data && <h3>{data.avatar_url}</h3>}
-            <button onClick={handleShowCounterButton}>Click here to show the counter</button>
+            {!data && !error && <h3>Loading...</h3>}
+            {error && <h3>Something went wrong</h3>}
+            {data && !error && <ul>
+                {data.map((el, index) =>
+                <li key={el.id}>
+                    <p>{el.login}</p>
+                </li>)}</ul>}
         </div>
     )
 }
