@@ -18,8 +18,10 @@ import { ShowGithubUser } from "./ShowGithubUser";
 
 export function App() {
 
-  return(
-<div>
-  <FetchData />
-</div>)
+  return (
+    <div>
+      <SWRConfig value={{ fetcher: defaultFetcher }}>
+        <FetchData />
+      </SWRConfig>
+    </div>)
 } 
